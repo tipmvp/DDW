@@ -1,0 +1,31 @@
+server:
+  port: 9527
+
+spring:
+  application:
+    name: zuulServer
+
+zuul:
+  routes:
+    api-a:
+      serviceId: userService-Impl
+      path: /user/**
+    api-plm:
+      serviceId: prctureUpload_img
+      path: /img/**
+eureka:
+  instance:
+    hostname: localhost   # 指定该Eureka实例的主机名
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:10001/eureka
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 6000 # 熔断超时时长：6000ms
+  #Zuul中默认就已经集成了Ribbon负载均衡和Hystix熔断机制。
+  #但是所有的超时策略都是走的默认值，比如熔断超时时间只有1S，很容易就触发了。因此建议我们手动进行配置：
