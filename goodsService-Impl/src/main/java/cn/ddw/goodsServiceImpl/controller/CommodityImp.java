@@ -3,6 +3,7 @@ package cn.ddw.goodsServiceImpl.controller;
 import cn.ddw.apiService.goodsService.entity.Commodity;
 import cn.ddw.apiService.goodsService.entity.Type;
 import cn.ddw.apiService.goodsService.serivce.CommodityService;
+import cn.ddw.apiService.goodsService.serivce.GoodsTypesService;
 import cn.ddw.goodsServiceImpl.service.GoodService;
 import cn.ddw.goodsServiceImpl.service.GoodsTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/com")
-public class CommodityImp implements CommodityService,GoodsTypeService{
+public class CommodityImp implements CommodityService, GoodsTypesService {
 
     @Autowired
     private GoodService goodService;
@@ -43,7 +44,7 @@ public class CommodityImp implements CommodityService,GoodsTypeService{
     @Override
     @GetMapping("/goods/typeAll/{tid}")
     public List<Commodity> getCommodityType(@PathVariable("tid")Integer t_id) {
-        goodService.getCommodityType(t_id).forEach(a-> System.out.println(a));
+//        goodService.getCommodityType(t_id).forEach(a-> System.out.println(a));
         return goodService.getCommodityType(t_id);
     }
 
@@ -52,4 +53,5 @@ public class CommodityImp implements CommodityService,GoodsTypeService{
     public Type getGoodsType() {
         return goodsTypeService.getGoodsType();
     }
+
 }

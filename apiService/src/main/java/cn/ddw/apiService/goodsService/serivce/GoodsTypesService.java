@@ -8,7 +8,8 @@ import cn.ddw.apiService.goodsService.entity.Type;
  * @Description :
  * 商品类型服务
  */
-public interface GoodsTypeService {
+public interface GoodsTypesService {
     //查询杏仁/巴旦木的商品
     Type getGoodsType();
+
 }

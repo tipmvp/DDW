@@ -4,4 +4,6 @@
     <select id="getGoodsType" resultType="cn.ddw.apiService.goodsService.entity.Type">
      SELECT * FROM `type` WHERE id=2
    </select>
+
+
 </mapper>

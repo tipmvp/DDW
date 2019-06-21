@@ -12,4 +12,6 @@ public interface GoodsTypeService {
 
     //查询杏仁/巴旦木的商品
     Type getGoodsType();
+
+
 }
