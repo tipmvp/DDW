@@ -21,8 +21,8 @@ public class UserController implements Usermapper {
     @Override
     @RequestMapping("/insertuser")
     public Object insertUser(UserEntity userEntity) {
-        userEntity.setCode("tttp");
-        userEntity.setPwd("1234567");
+//        userEntity.setCode("tttp");
+//        userEntity.setPwd("1234567");
         return userservice.insertUser(userEntity);
     }
 
@@ -30,8 +30,8 @@ public class UserController implements Usermapper {
     @RequestMapping("/login1")
     public UserEntity login(String code, String pwd) {
         UserEntity ue=new UserEntity();
-        ue.setCode("tttp");
-        ue.setPwd("1234567");
+//        ue.setCode("tttp");
+//        ue.setPwd("1234567");
         return ue;
     }
 

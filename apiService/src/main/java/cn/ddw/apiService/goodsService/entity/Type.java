@@ -8,16 +8,14 @@ import lombok.NoArgsConstructor;
  * @author XRZ
  * @date 2019/6/19
  * @Description :
- * 销量评价数量表
+ * 商品类型
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Salesvolume {
-    private int id;    //编号
-    private String m_salesvolume;  //月销量
-    private String sum_salesvolume;//总销量
-    private String sum_evaluate;   //累计评价
-
+public class Type {
+    private int id;
+    private int code;//类型编号
+    private String name;//类型名称
 
 }

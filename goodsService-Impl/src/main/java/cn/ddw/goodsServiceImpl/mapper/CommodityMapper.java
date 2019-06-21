@@ -1,22 +1,18 @@
 package cn.ddw.goodsServiceImpl.mapper;
 
 import cn.ddw.apiService.goodsService.entity.Commodity;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
+@Mapper
 public interface CommodityMapper {
-    int deleteByPrimaryKey(Integer id);
+    //根据id查询商品
+    Commodity getCommodityId(Integer Id);
 
-    int insert(Commodity record);
+    //查询所有商品
+    List<Commodity> getCommodityAll();
 
-    int insertSelective(Commodity record);
-
-    Commodity selectByPrimaryKey(Integer id);
-
-    int updateByPrimaryKeySelective(Commodity record);
-
-    int updateByPrimaryKey(Commodity record);
-
-
-    List<Commodity> getAll();
+    //根据商品类型查询商品
+    List<Commodity> getCommodityType(Integer t_id);
 }
