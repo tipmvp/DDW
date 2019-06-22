@@ -30,8 +30,9 @@ public class CommodityImp implements CommodityService, GoodsTypesService {
     private GoodsTypeService goodsTypeService;
 
     @Override
-    @RequestMapping("/getCom/{id}")
-    public Commodity getCommodityById(@PathVariable("id") Integer Id) {
+    @RequestMapping("/getCom/{uid}")
+    public Commodity getCommodityById(@PathVariable("uid") Integer Id) {
+        System.out.println(goodService.getCommodityById(Id));
         return goodService.getCommodityById(Id);
     }
 

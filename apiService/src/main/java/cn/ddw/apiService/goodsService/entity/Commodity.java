@@ -22,7 +22,7 @@ public class Commodity {
     private double price;    //商品价格
     private Integer c_id;   //品牌外键
     private Classification classf;   //商品品牌
-    private List<Type> goods;   //商品类型
+    private Type goods;         //商品类型
     private Integer t_id;         //类型编号外键
     private Details deta;    //商品详情
     private Integer deid;    //商品详情外键

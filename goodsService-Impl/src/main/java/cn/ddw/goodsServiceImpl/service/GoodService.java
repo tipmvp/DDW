@@ -1,6 +1,7 @@
 package cn.ddw.goodsServiceImpl.service;
 
 import cn.ddw.apiService.goodsService.entity.Commodity;
+import cn.ddw.apiService.goodsService.entity.Details;
 
 import java.util.List;
 
@@ -19,4 +20,6 @@ public interface GoodService {
 
 //   根据商品类型查询商品
     List<Commodity> getCommodityType(Integer t_id);
+
+
 }
