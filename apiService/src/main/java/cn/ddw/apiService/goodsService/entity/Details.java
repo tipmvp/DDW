@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 /**
  * @author XRZ
  * @date 2019/6/19
@@ -13,7 +15,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Details {
+public class Details implements Serializable {
     private int id;
     private String type; //商品类型
     private String address;  //产地
@@ -21,7 +23,7 @@ public class Details {
     private String specifications;  //产品规格
     private String time;    //保质期
     private String number;  //产品标准号
-    private String L_umber;  //许可证编号
+    private String L_umbers;  //许可证编号
     private String storagemode; //储存方式
     private String ediblemethod; //食用方式
     private String image;     //商品详情图

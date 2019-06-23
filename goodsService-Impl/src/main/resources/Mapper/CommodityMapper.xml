@@ -13,6 +13,7 @@
         <result property="number" column="number" />
         <result property="price" column="price" />
         <result property="image" column="image" />
+        <result property="type" column="type" />
         <result property="c_id" column="c_id" />
         <result property="t_id" column="t_id" />
         <result property="deid" column="deid" />
@@ -24,10 +25,14 @@
         <!-- column:当前查询中查询的column指定的数据会作为子查询queryUserById的参数 -->
         <!-- select:子查询的sql语句的ID -->
         <association property="deta" javaType="Details" column="deid" select="getComByDe"/>
+        <association property="sid" javaType="Salesvolume" column="said" select="getComBySe"/>
     </resultMap>
 
     <select id="getComByDe" resultType="Details">
             select * from details where Id=#{Id}
+    </select>
+    <select id="getComBySe" resultType="Salesvolume">
+            select * from salesvolume where id=#{Id}
     </select>
 
 
@@ -39,6 +44,6 @@
 
 
     <select id="getCommodityType" resultType="Commodity">
-     select * from commodity where t_id=#{t_id}
+     select * from commodity where r_id=#{t_id}
    </select>
 </mapper>
