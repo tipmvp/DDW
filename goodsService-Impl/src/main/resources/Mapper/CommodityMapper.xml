@@ -16,6 +16,7 @@
         <result property="type" column="type" />
         <result property="c_id" column="c_id" />
         <result property="t_id" column="t_id" />
+        <result property="r_id" column="r_id" />
         <result property="deid" column="deid" />
         <result property="said" column="said" />
         <!-- 这种配置类似与使用子查询查询，不用连接查询 -->

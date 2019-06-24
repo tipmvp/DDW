@@ -24,12 +24,14 @@ public class Commodity implements Serializable{
     private Integer c_id;   //品牌外键
     private Classification classf;   //商品品牌
     private Type goods;         //商品类型
-    private Integer t_id;         //类型编号外键
+    private Integer r_id;         //类型编号外键
     private Details deta;    //商品详情
     private Integer deid;    //商品详情外键
     private String image;    //商品图片
     private Salesvolume sid;   //评价销量数量
     private Integer said;    //评价销量数量id
+    private Integer t_id;    //味道id
+    private List<Com_type> com_t;   //味道
 
     @Override
     public String toString() {

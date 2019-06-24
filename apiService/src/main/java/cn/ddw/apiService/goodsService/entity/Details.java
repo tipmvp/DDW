@@ -23,7 +23,7 @@ public class Details implements Serializable {
     private String specifications;  //产品规格
     private String time;    //保质期
     private String number;  //产品标准号
-    private String L_umbers;  //许可证编号
+    private String l_umbers;  //许可证编号
     private String storagemode; //储存方式
     private String ediblemethod; //食用方式
     private String image;     //商品详情图
