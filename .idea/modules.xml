@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/DDW.iml" filepath="$PROJECT_DIR$/DDW.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apiService/apiService.iml" filepath="$PROJECT_DIR$/apiService/apiService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commentService-Impl/commentService-Impl.iml" filepath="$PROJECT_DIR$/commentService-Impl/commentService-Impl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eurekaService/eurekaService.iml" filepath="$PROJECT_DIR$/eurekaService/eurekaService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/goodsService-Impl/goodsService-Impl.iml" filepath="$PROJECT_DIR$/goodsService-Impl/goodsService-Impl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/orderService-Impl/orderService-Impl.iml" filepath="$PROJECT_DIR$/orderService-Impl/orderService-Impl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/paymentService-Impl/paymentService-Impl.iml" filepath="$PROJECT_DIR$/paymentService-Impl/paymentService-Impl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pictureUploadService-Impl/pictureUploadService-Impl.iml" filepath="$PROJECT_DIR$/pictureUploadService-Impl/pictureUploadService-Impl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shortMessageService-Impl/shortMessageService-Impl.iml" filepath="$PROJECT_DIR$/shortMessageService-Impl/shortMessageService-Impl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stockService-Impl/stockService-Impl.iml" filepath="$PROJECT_DIR$/stockService-Impl/stockService-Impl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/userService-Impl/userService-Impl.iml" filepath="$PROJECT_DIR$/userService-Impl/userService-Impl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/userService-consumer-Impl/userService-consumer-Impl.iml" filepath="$PROJECT_DIR$/userService-consumer-Impl/userService-consumer-Impl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zuulServer/zuulServer.iml" filepath="$PROJECT_DIR$/zuulServer/zuulServer.iml" />
+    </modules>
+  </component>
+</project>
