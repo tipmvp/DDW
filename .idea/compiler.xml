@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="apiService" />
+        <module name="commentService-Impl" />
+        <module name="eurekaService" />
+        <module name="goodsService-Impl" />
+        <module name="orderService-Impl" />
+        <module name="paymentService-Impl" />
+        <module name="pictureUploadService-Impl" />
+        <module name="shortMessageService-Impl" />
+        <module name="stockService-Impl" />
+        <module name="userService-consumer-Impl" />
+        <module name="userService-Impl" />
+        <module name="zuulServer" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="apiService" target="1.8" />
+      <module name="commentService-Impl" target="1.8" />
+      <module name="DDW" target="1.8" />
+      <module name="eurekaService" target="1.8" />
+      <module name="goodsService-Impl" target="1.8" />
+      <module name="orderService-Impl" target="1.8" />
+      <module name="paymentService-Impl" target="1.8" />
+      <module name="pictureUploadService-Impl" target="1.8" />
+      <module name="shortMessageService-Impl" target="1.8" />
+      <module name="stockService-Impl" target="1.8" />
+      <module name="userService-consumer-Impl" target="1.8" />
+      <module name="userService-Impl" target="1.8" />
+      <module name="zuulServer" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
