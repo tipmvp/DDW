@@ -13,6 +13,9 @@ zuul:
     api-plm:
       serviceId: prctureUpload_img
       path: /img/**
+    api-b:
+      serviceId: sms-server
+      path: /sms/**
     api-goods:
       serviceId: goodsService-Impl
       path: /goods/**

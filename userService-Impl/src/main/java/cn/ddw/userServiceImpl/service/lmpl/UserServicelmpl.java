@@ -1,6 +1,4 @@
 package cn.ddw.userServiceImpl.service.lmpl;
-
-
 import cn.ddw.apiService.userService.pojo.UserEntity;
 import cn.ddw.userServiceImpl.Usermapper.Usermapper;
 import cn.ddw.userServiceImpl.service.Userservice;
@@ -16,20 +14,25 @@ public class UserServicelmpl implements Userservice {
    private Usermapper usermapper;
 
     @Override
-    public Object insertUser(UserEntity userEntity) {
-        return usermapper.insertUser(userEntity);
+    public int insertUser(String code, String pwd) {
+        return usermapper.insertUser(code,pwd);
     }
 
     @Override
-    public UserEntity login(String code, String pwd) {
+    public UserEntity insert(String code, String pwd) {
 
-        return usermapper.login(code,pwd);
+        return usermapper.insert(code,pwd);
     }
 
     @Override
-    public Object inserPhomeUser(UserEntity userEntity) {
-        return null;
+    public int inserPhomeUser(String phone,String pwd) {
+        return usermapper.inserPhomeUser(phone, pwd);
     }
 
+    @Override
+    public UserEntity Login(String code, String pwd,String phone ) {
+
+        return usermapper.Login(code,pwd,phone);
+    }
 
 }

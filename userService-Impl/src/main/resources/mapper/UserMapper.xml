@@ -4,10 +4,24 @@
     <insert id="insertUser">
    INSERT INTO buyuser(code,pwd) VALUE(#{code},#{pwd})
  </insert>
-    <select id="login" resultType="cn.ddw.apiService.userService.pojo.UserEntity">
+    <select id="insert" resultType="cn.ddw.apiService.userService.pojo.UserEntity">
    SELECT * FROM buyuser WHERE code=#{code} AND pwd=#{pwd}
     </select>
     <insert id="inserPhomeUser">
-  INSERT INTO buyuser(phone,pwd)VALUE(#{phone},#{pwd})
+   INSERT INTO buyuser(phone,pwd)VALUES (#{phone},#{pwd})
     </insert>
+    <select id="Login" resultType="cn.ddw.apiService.userService.pojo.UserEntity">
+             SELECT * FROM buyuser
+        <where>
+            <if test="code != null and code!=''">
+                and code=#{code}
+            </if>
+            <if test="pwd != null and pwd!= ''">
+                and pwd =#{pwd}
+            </if>
+            <if test="phone != null and phone!=''">
+                and phone = #{phone}
+            </if>
+        </where>
+    </select>
 </mapper>

@@ -10,7 +10,7 @@ public interface Usermapper {
      * @param userEntity
      * @return
      */
-    public  Object insertUser(UserEntity userEntity);
+    public int insertUser(String code,String pwd);
 
     /**
      * 账号登陆
@@ -18,12 +18,15 @@ public interface Usermapper {
      * @param pwd
      * @return
      */
-    UserEntity login(String code,String pwd);
+    UserEntity insert(String code,String pwd);
 
     /**
      * 手机号登陆
      * @param userEntity
      * @return
      */
-    public  Object inserPhomeUser(UserEntity userEntity);
+    public  Object inserPhomeUser(String phone ,String pwd);
+
+
+    UserEntity Login(String code, String pwd,String phone);
 }
