@@ -1,4 +1,5 @@
 package cn.ddw.apiService.userService.pojo;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -7,6 +8,7 @@ import java.io.Serializable;
 import java.util.Date;
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class UserEntity implements Serializable {
     private  Integer id;
     private  String name;
@@ -18,6 +20,7 @@ public class UserEntity implements Serializable {
     private  String phone;
     private  String email;
     private  String titleimg;
+
 
     @Override
     public String toString() {

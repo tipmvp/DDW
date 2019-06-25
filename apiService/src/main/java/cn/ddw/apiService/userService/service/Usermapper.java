@@ -28,5 +28,61 @@ public interface Usermapper {
     public  Object inserPhomeUser(String phone ,String pwd);
 
 
-    UserEntity Login(String code, String pwd,String phone);
+    public  UserEntity  Login(String phone, String pwd);
+
+    /**
+     * 修改个人信息
+     * @param name
+     * @param nickname
+     * @param sex
+     * @param birthday
+     * @param phone
+     * @param email
+     * @return
+     */
+
+    public  int modify(UserEntity userEntity);
+
+    /**
+     * 根据ID查询
+     * @param id
+     * @param name
+     * @param nickname
+     * @param sex
+     * @param birthday
+     * @param phone
+     * @param email
+     * @return
+     */
+    public  UserEntity selectID(Integer id);
+
+    /**
+     * 更据ID查询密码
+     * @param id
+     * @return
+     */
+    public UserEntity selectPWD(Integer id);
+
+    /**
+     * 根据ID修改密码
+     * @param id
+     * @return
+     */
+    public int modifyPWD(String pwd);
+
+    /**
+     *
+     * 根据ID查询号码
+     * @param id
+     * @param phone
+     * @return
+     */
+    public UserEntity selectPhone(Integer id);
+
+    /**
+     * 根据ID修改号码
+     * @param phone
+     * @return
+     */
+    public int modifyPhone(Integer id,String phone);
 }

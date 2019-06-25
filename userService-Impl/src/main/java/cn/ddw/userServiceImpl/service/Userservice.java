@@ -15,6 +15,17 @@ public interface Userservice {
 
     public int inserPhomeUser(String phone, String pwd);
 
-    UserEntity Login(String code,String pwd,String phone);
+    UserEntity Login(String phone,String pwd);
 
+    int modify(UserEntity userEntity);
+
+    UserEntity selectID(Integer id);
+
+    UserEntity selectPWD(Integer id);
+
+    int modifyPWD(String pwd,Integer id);
+
+    UserEntity selectPhone(Integer id);
+
+    int modifyPhone(Integer id,String phone);
 }

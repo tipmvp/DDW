@@ -1,4 +1,5 @@
 package cn.ddw.userServiceImpl.controller;
+import ch.qos.logback.core.net.SyslogOutputStream;
 import cn.ddw.apiService.userService.pojo.UserEntity;
 import cn.ddw.apiService.userService.service.Usermapper;
 import cn.ddw.shortMessageServiceImpl.utils.SmsUtils;
@@ -6,6 +7,7 @@ import cn.ddw.userServiceImpl.service.Userservice;
 import cn.ddw.userServiceImpl.service.lmpl.UserServicelmpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
@@ -29,7 +31,7 @@ public class UserController implements Usermapper {
     @Override
     @RequestMapping("/insert")
     public UserEntity insert(String code, String pwd) {
-        return userservice.insert("2296936033","123456");
+        return userservice.insert("369258","123456");
     }
 
 
@@ -41,9 +43,50 @@ public class UserController implements Usermapper {
     }
 
     @Override
-    @RequestMapping("/Login")
-    public UserEntity Login(String code, String pwd ,String phne) {
-        return userservice.Login("369258","123465",null);
+    @RequestMapping("/Login/{phone}/{pwd}")
+    public UserEntity Login(@PathVariable("phone")String phone,@PathVariable("pwd")String pwd ) {
+        return userservice.Login(phone,pwd);
     }
+
+    @Override
+    @PostMapping("/modify")
+    public int modify(UserEntity userEntity) {
+        userEntity.setId(1002);       //获取cookie
+        return userservice.modify(userEntity);
+    }
+
+
+    @Override
+    @RequestMapping("/selectID/{id}")
+    public UserEntity selectID(@PathVariable("id")Integer id) {
+        return userservice.selectID(id);
+    }
+
+    @Override
+    @RequestMapping("/selectPWD/{id}")
+    public UserEntity selectPWD(@PathVariable("id")Integer id) {
+        return userservice.selectPWD(1034);
+    }
+
+    @Override
+    @PostMapping("/updatePwd/{pwd}")
+    public int modifyPWD(@PathVariable("pwd") String pwd) {
+        Integer id = 1034;         //获取cookie
+        return userservice.modifyPWD(pwd,id);
+    }
+
+    @Override
+    @RequestMapping("/selectPhone/{id}")
+    public UserEntity selectPhone(@PathVariable("id")Integer id) {
+        //获取cookie
+        return userservice.selectPhone(id);
+    }
+
+    @Override
+    @RequestMapping("/modifyPhone/{id}/{phone}")
+    public int modifyPhone(@PathVariable Integer id,@PathVariable String phone) {
+        return userservice.modifyPhone(id,phone);
+    }
+
 
 }

@@ -11,17 +11,24 @@
    INSERT INTO buyuser(phone,pwd)VALUES (#{phone},#{pwd})
     </insert>
     <select id="Login" resultType="cn.ddw.apiService.userService.pojo.UserEntity">
-             SELECT * FROM buyuser
-        <where>
-            <if test="code != null and code!=''">
-                and code=#{code}
-            </if>
-            <if test="pwd != null and pwd!= ''">
-                and pwd =#{pwd}
-            </if>
-            <if test="phone != null and phone!=''">
-                and phone = #{phone}
-            </if>
-        </where>
+   SELECT * FROM buyuser WHERE phone=#{phone} AND pwd=#{pwd}
     </select>
+    <update id="modify">
+   UPDATE buyuser SET name=#{name},nickname=#{nickname},sex=#{sex},birthday=#{birthday},phone=#{phone},email=#{email} WHERE id=#{id};
+    </update>
+    <select id="selectID" resultType="cn.ddw.apiService.userService.pojo.UserEntity">
+        SELECT `name`,`nickname`,`sex`,`birthday`,`phone`,`email`FROM buyuser WHERE id=#{id}
+    </select>
+    <select id="selectPWD" resultType="cn.ddw.apiService.userService.pojo.UserEntity">
+       SELECT pwd FROM `buyuser` WHERE id=#{id};
+    </select>
+     <update id="modifyPWD">
+         UPDATE buyuser SET pwd=#{pwd} WHERE id=#{id}
+     </update>
+    <select id="selectPhone" resultType="cn.ddw.apiService.userService.pojo.UserEntity">
+        SELECT phone FROM  buyuser WHERE id=#{id}
+    </select>
+    <update id="modifyPhone">
+        UPDATE buyuser SET phone=#{phone} WHERE id=#{id};
+    </update>
 </mapper>

@@ -30,9 +30,40 @@ public class UserServicelmpl implements Userservice {
     }
 
     @Override
-    public UserEntity Login(String code, String pwd,String phone ) {
+    public UserEntity Login(String phone , String pwd) {
 
-        return usermapper.Login(code,pwd,phone);
+        return usermapper.Login(phone,pwd);
     }
+
+    @Override
+    public int modify( UserEntity userEntity) {
+        return usermapper.modify(userEntity);
+    }
+
+    @Override
+    public UserEntity selectID(Integer id) {
+        return usermapper.selectID(id);
+    }
+
+    @Override
+    public UserEntity selectPWD(Integer id) {
+        return usermapper.selectPWD(id);
+    }
+
+    @Override
+    public int modifyPWD(String pwd,Integer id) {
+        return usermapper.modifyPWD(pwd, id);
+    }
+
+    @Override
+    public UserEntity selectPhone(Integer id) {
+        return usermapper.selectPhone(id);
+    }
+
+    @Override
+    public int modifyPhone(Integer id,String phone) {
+        return usermapper.modifyPhone(id, phone);
+    }
+
 
 }
