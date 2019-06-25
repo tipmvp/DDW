@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper .//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.ddw.goodsServiceImpl.mapper.DetailsMapper">
+    <select id="getDetailsById" resultType="Details">
+     select * from details where id=#{Id}
+   </select>
+</mapper>

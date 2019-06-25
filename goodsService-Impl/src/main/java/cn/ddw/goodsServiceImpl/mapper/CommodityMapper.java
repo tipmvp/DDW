@@ -1,6 +1,7 @@
 package cn.ddw.goodsServiceImpl.mapper;
 
 import cn.ddw.apiService.goodsService.entity.Commodity;
+import cn.ddw.apiService.goodsService.entity.Details;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -15,4 +16,7 @@ public interface CommodityMapper {
 
     //根据商品类型查询商品
     List<Commodity> getCommodityType(Integer t_id);
+
+
+//    Details getComByDe(Integer Id);
 }

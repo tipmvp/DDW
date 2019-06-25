@@ -1,9 +1,11 @@
 package cn.ddw.goodsServiceImpl.controller;
 
+import cn.ddw.apiService.goodsService.entity.Arrays;
 import cn.ddw.apiService.goodsService.entity.Commodity;
 import cn.ddw.apiService.goodsService.entity.Type;
 import cn.ddw.apiService.goodsService.serivce.CommodityService;
 import cn.ddw.apiService.goodsService.serivce.GoodsTypesService;
+import cn.ddw.goodsServiceImpl.service.ArraysService;
 import cn.ddw.goodsServiceImpl.service.GoodService;
 import cn.ddw.goodsServiceImpl.service.GoodsTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,9 +31,12 @@ public class CommodityImp implements CommodityService, GoodsTypesService {
     @Autowired
     private GoodsTypeService goodsTypeService;
 
+    @Autowired
+    private ArraysService arraysService;
+
     @Override
-    @RequestMapping("/getCom/{id}")
-    public Commodity getCommodityById(@PathVariable("id") Integer Id) {
+    @RequestMapping("/getCom/{uid}")
+    public Commodity getCommodityById(@PathVariable("uid") Integer Id) {
         return goodService.getCommodityById(Id);
     }
 
@@ -44,7 +49,6 @@ public class CommodityImp implements CommodityService, GoodsTypesService {
     @Override
     @GetMapping("/goods/typeAll/{tid}")
     public List<Commodity> getCommodityType(@PathVariable("tid")Integer t_id) {
-//        goodService.getCommodityType(t_id).forEach(a-> System.out.println(a));
         return goodService.getCommodityType(t_id);
     }
 
@@ -54,4 +58,8 @@ public class CommodityImp implements CommodityService, GoodsTypesService {
         return goodsTypeService.getGoodsType();
     }
 
+    @RequestMapping("/Evl/{e_id}")
+    public List<Arrays> getArraysByid(@PathVariable("e_id")Integer e_id){
+        return arraysService.getArryById(e_id);
+    }
 }

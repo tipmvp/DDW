@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper .//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.ddw.goodsServiceImpl.mapper.ArraysMapper">
+    <select id="getArryById" resultMap="Userbyid">
+         select * from evaluate where comid=#{Id}
+   </select>
+
+    <select id="getCountByTypeAndComid" resultType="java.lang.interge">
+         select count(*) from evaluate where comid=#{comId} and `type`=#{type}
+    </select>
+
+    <resultMap type="Arrays" id="Userbyid">
+        <!-- order的主键 -->
+        <id column="id" property="id" />
+        <!-- 映射其他普通列 -->
+        <result property="comid" column="comid" />
+        <result property="userid" column="userid" />
+        <result column="name" property="name" />
+        <result property="time" column="time" />
+        <result property="content" column="content" />
+        <result property="type" column="type" />
+        <!-- 这种配置类似与使用子查询查询，不用连接查询 -->
+        <!-- association ：配置一对一属性 -->
+        <!-- property:Order里面的User属性名 -->
+        <!-- javaType:属性类型 -->
+        <!-- column:当前查询中查询的column指定的数据会作为子查询queryUserById的参数 -->
+        <!-- select:子查询的sql语句的ID -->
+        <association property="comm" javaType="Commodity" column="comid" select="getComm"/>
+        <association property="user" javaType="cn.ddw.apiService.userService.pojo.UserEntity" column="userid" select="getUser"/>
+    </resultMap>
+
+    <select id="getComm" resultType="Commodity">
+        select * from commodity where id=#{Id}
+    </select>
+
+    <select id="getUser" resultType="cn.ddw.apiService.userService.pojo.UserEntity">
+        select * from buyuser where id=#{u_Id}
+    </select>
+</mapper>

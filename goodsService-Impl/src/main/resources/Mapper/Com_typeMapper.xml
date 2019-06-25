@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper .//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.ddw.goodsServiceImpl.mapper.Com_typeMapper">
+    <select id="com_t" resultType="Com_type">
+     select * from com_type where comid=#{id}
+   </select>
+</mapper>
